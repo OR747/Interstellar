@@ -14,11 +14,14 @@ import { Entypo } from "@expo/vector-icons";
 const App = () => {
   return (
     <ScrollView style={styles.container}>
-      <Image
-        source={require("./assets/img/imbb.png")}
-        resizeMode="cover"
-        style={styles.img}
-      ></Image>
+      <View style={styles.header}>
+        <Image
+          source={require("./assets/img/imbb.png")}
+          resizeMode="cover"
+          style={styles.img}
+        ></Image>
+      </View>
+
       <Text style={styles.text}>Interstellar</Text>
       <Text style={styles.text1}>
         2014 PG-13 2h49min Adventure,Drama,Sci-Fi
@@ -43,20 +46,28 @@ const App = () => {
         </View>
       </View>
       <View style={styles.container2}>
-        <Entypo name="star" size={32} color="#E6BA1E" />
-        <Text style={styles.text3}>8.6/10</Text>
-        <Entypo name="star-outlined" size={32} color="white" />
-        <Text style={styles.text3}>RATE THIS</Text>
-        <MaterialCommunityIcons
-          name="numeric-9-plus-box"
-          size={32}
-          color="white"
-          color="green"
-        />
-        <Text style={styles.text3}>METASCORE</Text>
+        <View>
+          <Entypo name="star" size={32} color="#E6BA1E" />
+          <Text style={styles.text31}>8.6/10</Text>
+        </View>
+        <View>
+          <Entypo name="star-outlined" size={32} color="white" />
+          <Text style={styles.text31}>RATE THIS</Text>
+        </View>
+        <View>
+          <MaterialCommunityIcons
+            name="numeric-9-plus-box"
+            size={32}
+            color="white"
+            color="green"
+          />
+          <Text style={styles.text31}>METASCORE</Text>
+        </View>
       </View>
       <View style={styles.container3}>
-        <Text style={styles.text4}>Top Bill Cast</Text>
+        <View style={styles.container31}>
+          <Text style={styles.text4}>Top Bill Cast</Text>
+        </View>
         <View style={styles.carroussel}>
           <View style={styles.card}>
             <Image
@@ -117,40 +128,66 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
+  header: { backgroundColor: "#393939", height: 60 },
   img: {
-    height: 40,
-    width: 80,
-    marginLeft: 20,
+    height: 30,
+    width: 55,
+    marginLeft: 10,
+    marginTop: 15,
+    backgroundColor: "#393939",
   },
   container: {
     flex: 1,
-    backgroundColor: "grey",
+    backgroundColor: "#1A1A1A",
     marginTop: 40,
     height: 100,
   },
-  text: { fontSize: 24, color: "white", marginTop: 15 },
-  text1: { color: "white", marginTop: 20 },
-  img1: { height: 200, width: 150 },
+  text: { fontSize: 40, color: "white", marginTop: 10, marginLeft: 10 },
+  text1: { color: "white", marginTop: 10, marginLeft: 10 },
+  img1: { height: 200, width: 140 },
   //container1//
-  container1: { marginTop: 10 },
-  container12: { marginTop: 10 },
-  text2: { color: "white" },
+  container1: { marginTop: 20, flexDirection: "row", marginLeft: 10 },
+  container12: { height: 40, marginLeft: 10 },
+  text2: { color: "white", width: 225 },
   button: {
     marginTop: 10,
     backgroundColor: "#0477BD",
-    width: 150,
-    height: 30,
-    borderRadius: 5,
-    marginLeft: 50,
+    width: 220,
+    height: 40,
+    borderRadius: 10,
   },
-  text3: { color: "white", marginTop: 7 },
+  text3: { color: "white", marginTop: 10, marginLeft: 25 },
+  //container2//
+  container2: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 30,
+  },
+  text31: { color: "white" },
   //container3//
-  Container3: {},
-  text4: { fontSize: 24, color: "white", marginTop: 20 },
-  card: { marginTop: 20 },
-  text5: { color: "white" },
-  text6: { color: "black" },
+  Container31: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  // text41: { color: "blue" },
+  text4: {
+    fontSize: 24,
+    color: "white",
+    marginTop: 10,
+    backgroundColor: "#222222",
+    marginLeft: 10,
+  },
+  carroussel: { flexDirection: "row" },
+  card: {
+    marginTop: 10,
+    backgroundColor: "#2A2A2A",
+    width: 150,
+    marginLeft: 10,
+  },
+  text5: { color: "white", fontSize: 15 },
+  text6: { color: "#A8A8A8" },
   //Footer//
+  footer: { marginLeft: 10, marginTop: 10, backgroundColor: "#222222" },
   text7: { color: "white" },
-  text8: { color: "black" },
+  text8: { color: "#808080" },
 });
